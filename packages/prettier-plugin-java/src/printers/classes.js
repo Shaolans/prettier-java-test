@@ -60,7 +60,7 @@ class ClassesPrettierVisitor {
     return rejectAndJoin(" ", [
       group(
         rejectAndConcat([
-          rejectAndJoin(" ", [ctx.Class[0], name]),
+          rejectAndJoin(" ", [ctx.Class[0], hardline, hardline, hardline, hardline, name]),
           optionalTypeParams,
           superClassesPart,
           superInterfacesPart

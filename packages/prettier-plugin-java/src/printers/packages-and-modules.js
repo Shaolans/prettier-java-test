@@ -51,9 +51,20 @@ class PackagesAndModulesPrettierVisitor {
     return rejectAndConcat([
       rejectAndJoin(concat([hardline, hardline]), [
         rejectAndJoin(hardline, staticImports),
-        hardline,hardline,hardline,hardline,hardline,hardline,
+        hardline,
+        hardline,
+        hardline,
+        hardline,
+        hardline,
+        hardline,
         rejectAndJoin(hardline, nonStaticImports),
-        hardline,hardline,hardline,hardline,hardline,hardline,hardline,
+        hardline,
+        hardline,
+        hardline,
+        hardline,
+        hardline,
+        hardline,
+        hardline,
         moduleDeclaration
       ])
     ]);
