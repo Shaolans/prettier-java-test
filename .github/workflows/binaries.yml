@@ -46,6 +46,12 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/prettier
           pkg package.json -o $GITHUB_WORKSPACE/prettier-java-${GITHUB_REF##*/} --targets node10-linux-x64,node10-macos-x64,node10-win-x64
+      - name: Compress artifacts
+        run: |
+          gzexe prettier-java-${GITHUB_REF##*/}-linux
+          gzexe prettier-java-${GITHUB_REF##*/}-macos
+          gzexe prettier-java-${GITHUB_REF##*/}-win.exe
+          rm prettier-java-${GITHUB_REF##*/}-linux~ prettier-java-${GITHUB_REF##*/}-macos prettier-java-${GITHUB_REF##*/}-win.exe
       - name: Upload the artifacts
         uses: skx/github-action-publish-binaries@master
         env:
